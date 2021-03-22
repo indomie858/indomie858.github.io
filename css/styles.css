@@ -1,0 +1,282 @@
+/* Color Palette - old
+#304145 - color 1
+#BAC7CE - color 2
+#BD3147 - color 3
+#30475e - color 4
+
+color palette source https://designshack.net/articles/graphics/resume-color-schemes/
+*/
+
+/* color palette - with gradient
+rgba(0, 0, 0, 1) - header/footer
+rgba(10, 6, 37, 0.9) - header/footer
+rgba(255, 255, 255, 0.2) - workexperience
+rgba(8, 0, 119, 0.5) - education
+#BD3147 - workexperience
+#BAC7CE - h3 color
+*/
+
+
+
+
+/* Global styles 
+------------------------------------*/
+
+/* keyframe animations for heading content */
+/* keyframe reference Reference: https://www.w3schools.com/css/css3_animations.asp */
+
+@keyframes slide-in-right {
+    from {
+        transform: translateX(-500px);
+    }
+
+    to {
+        transform: translateX(0px);
+    }
+}
+
+@keyframes slide-in-left {
+    from {
+        transform: translateX(1000px);
+    }
+
+    to {
+        transform: translateX(0px);
+    }
+}
+
+.slide-right {
+    /* animation shorthand = name | duration */
+    animation: slide-in-right 1.5s;
+}
+
+.slide-left {
+    /* animation shorthand = name | duration */
+    animation: slide-in-left 1.5s;
+}
+
+
+html {
+    /* this line allows the page to scroll smoothly to each section/div of the page when clicking on links in nav bar. Reference https://stackoverflow.com/questions/24739126/scroll-to-a-specific-element-using-html*/
+    scroll-behavior: smooth;
+
+    /* border box fix snippet */
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing:inherit;
+}
+
+body {
+    /* background: #6F1A07; */
+    font-family: Lato, sans-serif;
+    margin: 0;
+}
+
+h1, h2, h3, a {
+    font-family: Monda, sans-serif;
+}
+
+p, li {
+    font-family: Lato, sans-serif;
+    line-height: 1.6;
+    font-size: 17px;
+    
+}
+
+li {
+    list-style-type: square;
+}
+
+h1 {
+    font-size: 60px;
+    margin-top: 0;
+}
+
+h2 {
+    font-size: 30px;
+    margin-top: 0;
+}
+
+h3 {
+    color: #BD3147;
+    font-size: 20px;
+}
+
+.content-wrap {
+    max-width: 950px;
+    margin: 0 auto;
+    padding: 50px;
+    overflow: hidden;
+}
+
+.column-narrow {
+    width: 30%;
+    float: left;
+    padding-right: 3%;
+    min-height: 200px;
+}
+
+.column-wide {
+    width: 70%;
+    float: left;
+    min-height: 225px;
+}
+
+nav {
+    background: black;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+}
+
+nav a:hover {
+    background-color: #BD3147;
+    border-radius: 0px 0px 10px 10px;
+    transform: translateY(5px);
+}
+
+.display {
+    text-align: center;
+}
+
+.display a {
+    padding: 10px 30px;
+    display: inline-block;
+}
+
+/* Header & Footer 
+------------------------------------*/
+header {
+    /* background: #304145; */
+    background: linear-gradient(rgba(0, 0, 0, 1), rgba(10, 6, 37, 0.9));
+    color:#BAC7CE;
+    padding-top: 30px;
+}
+
+header h1, header h2 {
+    margin:0;
+}
+
+.profile-img {
+    padding: 3%;
+    border-radius: 50%;
+}
+
+.profile-img:hover {
+    transition: all 2s ease;
+    transform: rotate(360deg);
+}
+
+footer {
+    /* background: #304145; */
+    background: linear-gradient(rgba(0, 0, 0, 1), rgba(10, 6, 37, 0.9));
+    color: #BAC7CE;
+    text-align: center;
+    padding: 30px;
+}
+
+.contact-info a {
+    padding: 20px 30px;
+    display: inline-block;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 40px;
+    transition: all 0.2s ease;
+}
+
+.contact-info a:hover {
+    color:#f05454;
+    transform: translateY(-5px);
+}
+
+/* Work Experience
+------------------------------------*/
+#workExperience {
+    /* background: #BAC7CE; */
+    background: linear-gradient(to top, #BAC7CE, rgba(255, 255, 255, 0.2));
+    color:#30475e;
+}
+
+#workExperience h2 {
+    text-align: center;
+}
+
+#workExperience .company-name {
+    font-family: Monda, sans-serif;
+    font-weight: bold;
+}
+
+
+/* Education
+------------------------------------*/
+#education {
+    /* background: #30475e; */
+    color:#BAC7CE;
+}
+
+#education h2 {
+    text-align: center;
+}
+
+#education .degree {
+    font-family: Monda, sans-serif;
+    font-weight: bold;
+}
+
+.image-bg-education {
+    background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(8, 0, 119, 0.5)), url(/images/education_bg.jpg);
+    background-size: contain, cover;
+    background-repeat: no-repeat;
+}
+
+
+/* Technical skills
+------------------------------------*/
+#skills {
+    /* background: #30475e; */
+    color:#BAC7CE;
+}
+
+#skills li {
+    font-size: 16px;
+}
+
+#skills h2 {
+    text-align: center;
+}
+
+.image-bg-skills {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(8, 0, 119, 0.5)), url(/images/skills_bg.png);
+    background-size: contain, cover;
+    background-repeat: no-repeat;
+}
+
+/* I'm using lecture slides from COMP 584 for reference on flexbox. I'm currently taking comp 584 */
+.skills-flex-row {
+    margin: 0;
+    padding: 0;
+    /* border: 5px solid red; */
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+
+.skills-flex-item {
+    margin: 0px;
+    padding: 0px 20px;
+    flex: 0 0 98%;
+}
+
+@media only screen and (min-width: 768px) {
+    .skills-flex-item {
+        flex: 0 0 30%;
+    }
+}
